@@ -1,0 +1,9 @@
+def function():
+    total = 0  # 使用局部变量
+    for i in range(0, 101):
+        total = total + i
+    print(total)  # 输出: 5050
+    return total  # 返回结果
+
+result = function()
+print(f"计算结果: {result}")  
