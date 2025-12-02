@@ -1,0 +1,25 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver import Keys
+import datetime
+import os
+from selenium.webdriver.common.action_chains import ActionChains
+
+#创建chrome driver
+driver = webdriver.Chrome()
+driver.maximize_window()
+wait = WebDriverWait(driver, 15)
+
+#访问repo的连接
+driver.get("https://www.baidu.com")
+search = driver.find_element(By.ID,"chat-textarea")
+search.send_keys(Keys.CONTROL,"A")
+search.send_keys(Keys.DELETE)
+
+search.send_keys("selenium")
+search.send_keys(Keys.ENTER)
+time.sleep(10)
+driver.quit()
